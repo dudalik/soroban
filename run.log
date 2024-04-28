@@ -1,0 +1,43 @@
+alec@miasrv ~/people/dudalik $ soroban contract init soroban -w auth deep_contract_auth simple_account
+ℹ️  Initializing project at soroban
+➕  Writing soroban/.gitignore
+➕  Writing soroban/.soroban/contract-ids/.gitkeep
+➕  Writing soroban/Cargo.lock
+➕  Writing soroban/Cargo.toml
+➕  Writing soroban/README.md
+➕  Writing soroban/contracts/hello_world/Cargo.toml
+➕  Writing soroban/contracts/hello_world/src/lib.rs
+➕  Writing soroban/contracts/hello_world/src/test.rs
+ℹ️  Initializing example contract: auth
+➕  Writing soroban/contracts/auth/src/test.rs
+➕  Writing soroban/contracts/auth/src/lib.rs
+➕  Writing soroban/contracts/auth/Cargo.toml
+➕  Writing soroban/contracts/auth/Cargo.lock
+ℹ️  Initializing example contract: deep_contract_auth
+➕  Writing soroban/contracts/deep_contract_auth/src/test.rs
+➕  Writing soroban/contracts/deep_contract_auth/src/lib.rs
+➕  Writing soroban/contracts/deep_contract_auth/Cargo.toml
+➕  Writing soroban/contracts/deep_contract_auth/Cargo.lock
+ℹ️  Initializing example contract: simple_account
+➕  Writing soroban/contracts/simple_account/src/test.rs
+➕  Writing soroban/contracts/simple_account/src/lib.rs
+➕  Writing soroban/contracts/simple_account/Cargo.toml
+➕  Writing soroban/contracts/simple_account/Cargo.lock
+
+alec@miasrv ~/people/dudalik/soroban $ soroban contract init ./ -w account
+ℹ️  Initializing project at ./
+ℹ️  Skipped creating ./.gitignore as it already exists
+ℹ️  Skipped creating ./.soroban/contract-ids/.gitkeep as it already exists
+ℹ️  Skipped creating ./Cargo.lock as it already exists
+➕  Writing ./Cargo.toml
+ℹ️  Skipped creating ./README.md as it already exists
+➕  Writing ./contracts/hello_world/Cargo.toml
+ℹ️  Skipped creating ./contracts/hello_world/src/lib.rs as it already exists
+ℹ️  Skipped creating ./contracts/hello_world/src/test.rs as it already exists
+ℹ️  Initializing example contract: account
+➕  Writing ./contracts/account/src/test.rs
+➕  Writing ./contracts/account/src/lib.rs
+➕  Writing ./contracts/account/Cargo.toml
+➕  Writing ./contracts/account/Cargo.lock
+
+:!clear;cargo test

@@ -1,0 +1,11 @@
+# Rust's output directory
+target
+
+# Local Soroban settings
+.soroban
+
+# Vim
+.*.sw?
+*.session
+*.session.saved
+
