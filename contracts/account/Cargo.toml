@@ -1,5 +1,5 @@
 [package]
-name = "soroban-account-contract"
+name = "account"
 version = "0.0.0"
 edition = "2021"
 publish = false

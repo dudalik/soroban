@@ -41,3 +41,380 @@ alec@miasrv ~/people/dudalik/soroban $ soroban contract init ./ -w account
 ➕  Writing ./contracts/account/Cargo.lock
 
 :!clear;cargo test
+
+alec@miasrv ~/people/dudalik/soroban (main) $ soroban contract init ./ \
+>   --frontend-template https://github.com/stellar/soroban-astro-template
+ℹ️  Initializing project at ./
+ℹ️  Skipped creating ./.gitignore as it already exists
+ℹ️  Skipped creating ./.soroban/contract-ids/.gitkeep as it already exists
+ℹ️  Skipped creating ./Cargo.lock as it already exists
+➕  Writing ./Cargo.toml
+ℹ️  Skipped creating ./README.md as it already exists
+➕  Writing ./contracts/hello_world/Cargo.toml
+ℹ️  Skipped creating ./contracts/hello_world/src/lib.rs as it already exists
+ℹ️  Skipped creating ./contracts/hello_world/src/test.rs as it already exists
+ℹ️  Initializing with frontend template
+➕  Writing ./public/favicon.svg
+➕  Writing ./.env.example
+➕  Writing ./package-lock.json
+➕  Writing ./src/pages/index.astro
+➕  Writing ./src/components/Card.astro
+➕  Writing ./src/layouts/Layout.astro
+➕  Writing ./src/contracts/util.ts
+➕  Writing ./src/env.d.ts
+➕  Writing ./packages/.gitkeep
+ℹ️  Merging ./.gitignore contents
+ℹ️  Skipped creating ./.gitignore as it already exists
+ℹ️  Merging ./README.md contents
+ℹ️  Skipped creating ./README.md as it already exists
+➕  Writing ./tsconfig.json
+➕  Writing ./astro.config.mjs
+ℹ️  Skipped creating ./Cargo.toml as it already exists
+ℹ️  Skipped creating ./Cargo.lock as it already exists
+➕  Writing ./package.json
+➕  Writing ./.gitattributes
+➕  Writing ./initialize.js
+➕  Writing ./CONTRIBUTING.md
+cp .env.example .env
+npm i
+
+alec@miasrv ~/people/dudalik/soroban (main) $ npm run init
+
+> soroban@0.0.1 init
+> node initialize.js
+
+###################### Initializing ########################
+soroban keys generate dudalik
+soroban keys fund dudalik
+2024-04-28T20:24:53.804616Z  WARN soroban_cli::commands::network: Account already exists
+rm -f /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/*.wasm
+rm -f /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/*.d
+soroban contract build
+cargo rustc --manifest-path=contracts/account/Cargo.toml --crate-type=cdylib --target=wasm32-unknown-unknown --release
+   Compiling proc-macro2 v1.0.69
+   Compiling unicode-ident v1.0.12
+   Compiling serde v1.0.192
+   Compiling serde_json v1.0.108
+   Compiling itoa v1.0.10
+   Compiling ryu v1.0.16
+   Compiling autocfg v1.1.0
+   Compiling ident_case v1.0.1
+   Compiling fnv v1.0.7
+   Compiling strsim v0.10.0
+   Compiling thiserror v1.0.55
+   Compiling version_check v0.9.4
+   Compiling base32 v0.4.0
+   Compiling typenum v1.17.0
+   Compiling escape-bytes v0.1.1
+   Compiling quote v1.0.33
+   Compiling generic-array v0.14.7
+   Compiling syn v2.0.39
+   Compiling num-traits v0.2.17
+   Compiling indexmap v1.9.3
+   Compiling either v1.9.0
+   Compiling semver v1.0.21
+   Compiling itertools v0.11.0
+   Compiling hashbrown v0.12.3
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling num-integer v0.1.45
+   Compiling prettyplease v0.2.15
+   Compiling wasmparser v0.88.0
+   Compiling rustc_version v0.4.0
+   Compiling digest v0.10.7
+   Compiling num-bigint v0.4.4
+   Compiling darling_core v0.20.3
+   Compiling cpufeatures v0.2.11
+   Compiling base64 v0.13.1
+   Compiling cfg-if v1.0.0
+   Compiling sha2 v0.10.8
+   Compiling serde_derive v1.0.192
+   Compiling thiserror-impl v1.0.55
+   Compiling num-derive v0.4.1
+   Compiling darling_macro v0.20.3
+   Compiling darling v0.20.3
+   Compiling serde_with_macros v3.4.0
+   Compiling ethnum v1.5.0
+   Compiling static_assertions v1.1.0
+   Compiling bytes-lit v0.0.5
+   Compiling hex v0.4.3
+   Compiling serde_with v3.4.0
+   Compiling crate-git-revision v0.0.6
+   Compiling stellar-strkey v0.0.8
+   Compiling stellar-xdr v20.1.0
+   Compiling soroban-env-common v20.3.0
+   Compiling soroban-sdk-macros v20.5.0
+   Compiling soroban-spec v20.5.0
+   Compiling soroban-spec-rust v20.5.0
+   Compiling soroban-env-macros v20.3.0
+   Compiling soroban-env-guest v20.3.0
+   Compiling soroban-sdk v20.5.0
+   Compiling soroban-account-contract v0.0.0 (/home/alec/people/dudalik/soroban/contracts/account)
+    Finished release [optimized] target(s) in 1m 18s
+cargo rustc --manifest-path=contracts/auth/Cargo.toml --crate-type=cdylib --target=wasm32-unknown-unknown --release
+   Compiling soroban-auth-contract v0.0.0 (/home/alec/people/dudalik/soroban/contracts/auth)
+    Finished release [optimized] target(s) in 0.51s
+cargo rustc --manifest-path=contracts/deep_contract_auth/Cargo.toml --crate-type=cdylib --target=wasm32-unknown-unknown --release
+   Compiling soroban-deployer-contract v0.0.0 (/home/alec/people/dudalik/soroban/contracts/deep_contract_auth)
+    Finished release [optimized] target(s) in 0.59s
+cargo rustc --manifest-path=contracts/hello_world/Cargo.toml --crate-type=cdylib --target=wasm32-unknown-unknown --release
+   Compiling hello-world v0.0.0 (/home/alec/people/dudalik/soroban/contracts/hello_world)
+    Finished release [optimized] target(s) in 0.48s
+cargo rustc --manifest-path=contracts/simple_account/Cargo.toml --crate-type=cdylib --target=wasm32-unknown-unknown --release
+   Compiling soroban-simple-account-contract v0.0.0 (/home/alec/people/dudalik/soroban/contracts/simple_account)
+    Finished release [optimized] target(s) in 0.55s
+(soroban contract deploy --wasm /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/hello_world.wasm --ignore-checks) > /home/alec/people/dudalik/soroban/.soroban/contract-ids/hello_world.txt
+(soroban contract deploy --wasm /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/soroban_account_contract.wasm --ignore-checks) > /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_account_contract.txt
+(soroban contract deploy --wasm /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/soroban_auth_contract.wasm --ignore-checks) > /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_auth_contract.txt
+(soroban contract deploy --wasm /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/soroban_deployer_contract.wasm --ignore-checks) > /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_deployer_contract.txt
+(soroban contract deploy --wasm /home/alec/people/dudalik/soroban/target/wasm32-unknown-unknown/release/soroban_simple_account_contract.wasm --ignore-checks) > /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_simple_account_contract.txt
+soroban contract bindings typescript --contract-id $(cat /home/alec/people/dudalik/soroban/.soroban/contract-ids/hello_world.txt) --output-dir /home/alec/people/dudalik/soroban/packages/hello_world --overwrite
+npm WARN workspaces hello_world in filter set, but no workspace folder present
+
+added 24 packages, and audited 525 packages in 7s
+
+185 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> hello_world@0.0.0 build
+> node ./scripts/build.mjs
+
+soroban contract bindings typescript --contract-id $(cat /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_account_contract.txt) --output-dir /home/alec/people/dudalik/soroban/packages/soroban_account_contract --overwrite
+
+added 4 packages, and audited 530 packages in 3s
+
+185 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> soroban_account_contract@0.0.0 build
+> node ./scripts/build.mjs
+
+src/index.ts:97:146 - error TS2304: Cannot find name 'Context'.
+
+97   __check_auth: ({signature_payload, signatures, auth_context}: {signature_payload: Buffer, signatures: Array<AccSignature>, auth_context: Array<Context>}, options?: {
+                                                                                                                                                    ~~~~~~~
+
+src/index.ts:118:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+118       new ContractSpec([ "AAAAAQAAAAAAAAAAAAAADEFjY1NpZ25hdHVyZQAAAAIAAAAAAAAACnB1YmxpY19rZXkAAAAAA+4AAAAgAAAAAAAAAAlzaWduYXR1cmUAAAAAAAPuAAAAQA==",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+119         "AAAABAAAAAAAAAAAAAAACEFjY0Vycm9yAAAABQAAAAAAAAAQTm90RW5vdWdoU2lnbmVycwAAAAEAAAAAAAAADk5lZ2F0aXZlQW1vdW50AAAAAAACAAAAAAAAABFCYWRTaWduYXR1cmVPcmRlcgAAAAAAAAMAAAAAAAAADVVua25vd25TaWduZXIAAAAAAAAEAAAAAAAAAA5JbnZhbGlkQ29udGV4dAAAAAAABQ==",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+121         "AAAAAAAAAAAAAAAJYWRkX2xpbWl0AAAAAAAAAgAAAAAAAAAFdG9rZW4AAAAAAAATAAAAAAAAAAVsaW1pdAAAAAAAAAsAAAAA",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+122         "AAAAAAAAAAAAAAAMX19jaGVja19hdXRoAAAAAwAAAAAAAAARc2lnbmF0dXJlX3BheWxvYWQAAAAAAAPuAAAAIAAAAAAAAAAKc2lnbmF0dXJlcwAAAAAD6gAAB9AAAAAMQWNjU2lnbmF0dXJlAAAAAAAAAAxhdXRoX2NvbnRleHQAAAPqAAAH0AAAAAdDb250ZXh0AAAAAAEAAAPpAAAD7QAAAAAAAAfQAAAACEFjY0Vycm9y" ]),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+src/index.ts:97:146 - error TS2304: Cannot find name 'Context'.
+
+97   __check_auth: ({signature_payload, signatures, auth_context}: {signature_payload: Buffer, signatures: Array<AccSignature>, auth_context: Array<Context>}, options?: {
+                                                                                                                                                    ~~~~~~~
+
+src/index.ts:118:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+118       new ContractSpec([ "AAAAAQAAAAAAAAAAAAAADEFjY1NpZ25hdHVyZQAAAAIAAAAAAAAACnB1YmxpY19rZXkAAAAAA+4AAAAgAAAAAAAAAAlzaWduYXR1cmUAAAAAAAPuAAAAQA==",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+119         "AAAABAAAAAAAAAAAAAAACEFjY0Vycm9yAAAABQAAAAAAAAAQTm90RW5vdWdoU2lnbmVycwAAAAEAAAAAAAAADk5lZ2F0aXZlQW1vdW50AAAAAAACAAAAAAAAABFCYWRTaWduYXR1cmVPcmRlcgAAAAAAAAMAAAAAAAAADVVua25vd25TaWduZXIAAAAAAAAEAAAAAAAAAA5JbnZhbGlkQ29udGV4dAAAAAAABQ==",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+121         "AAAAAAAAAAAAAAAJYWRkX2xpbWl0AAAAAAAAAgAAAAAAAAAFdG9rZW4AAAAAAAATAAAAAAAAAAVsaW1pdAAAAAAAAAsAAAAA",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+122         "AAAAAAAAAAAAAAAMX19jaGVja19hdXRoAAAAAwAAAAAAAAARc2lnbmF0dXJlX3BheWxvYWQAAAAAAAPuAAAAIAAAAAAAAAAKc2lnbmF0dXJlcwAAAAAD6gAAB9AAAAAMQWNjU2lnbmF0dXJlAAAAAAAAAAxhdXRoX2NvbnRleHQAAAPqAAAH0AAAAAdDb250ZXh0AAAAAAEAAAPpAAAD7QAAAAAAAAfQAAAACEFjY0Vycm9y" ]),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+src/index.ts:97:146 - error TS2304: Cannot find name 'Context'.
+
+97   __check_auth: ({signature_payload, signatures, auth_context}: {signature_payload: Buffer, signatures: Array<AccSignature>, auth_context: Array<Context>}, options?: {
+                                                                                                                                                    ~~~~~~~
+
+src/index.ts:118:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_account_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+118       new ContractSpec([ "AAAAAQAAAAAAAAAAAAAADEFjY1NpZ25hdHVyZQAAAAIAAAAAAAAACnB1YmxpY19rZXkAAAAAA+4AAAAgAAAAAAAAAAlzaWduYXR1cmUAAAAAAAPuAAAAQA==",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+119         "AAAABAAAAAAAAAAAAAAACEFjY0Vycm9yAAAABQAAAAAAAAAQTm90RW5vdWdoU2lnbmVycwAAAAEAAAAAAAAADk5lZ2F0aXZlQW1vdW50AAAAAAACAAAAAAAAABFCYWRTaWduYXR1cmVPcmRlcgAAAAAAAAMAAAAAAAAADVVua25vd25TaWduZXIAAAAAAAAEAAAAAAAAAA5JbnZhbGlkQ29udGV4dAAAAAAABQ==",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+... 
+121         "AAAAAAAAAAAAAAAJYWRkX2xpbWl0AAAAAAAAAgAAAAAAAAAFdG9rZW4AAAAAAAATAAAAAAAAAAVsaW1pdAAAAAAAAAsAAAAA",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+122         "AAAAAAAAAAAAAAAMX19jaGVja19hdXRoAAAAAwAAAAAAAAARc2lnbmF0dXJlX3BheWxvYWQAAAAAAAPuAAAAIAAAAAAAAAAKc2lnbmF0dXJlcwAAAAAD6gAAB9AAAAAMQWNjU2lnbmF0dXJlAAAAAAAAAAxhdXRoX2NvbnRleHQAAAPqAAAH0AAAAAdDb250ZXh0AAAAAAEAAAPpAAAD7QAAAAAAAAfQAAAACEFjY0Vycm9y" ]),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+
+Found 6 errors.
+
+file:///home/alec/people/dudalik/soroban/packages/soroban_account_contract/scripts/build.mjs:18
+      throw err
+      ^
+
+[Error: ENOENT: no such file or directory, scandir './dist'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: './dist'
+}
+
+Node.js v20.12.2
+npm ERR! Lifecycle script `build` failed with error: 
+npm ERR! Error: command failed 
+npm ERR!   in workspace: soroban_account_contract@0.0.0 
+npm ERR!   at location: /home/alec/people/dudalik/soroban/packages/soroban_account_contract 
+soroban contract bindings typescript --contract-id $(cat /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_auth_contract.txt) --output-dir /home/alec/people/dudalik/soroban/packages/soroban_auth_contract --overwrite
+
+added 4 packages, and audited 535 packages in 3s
+
+185 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> soroban_auth_contract@0.0.0 build
+> node ./scripts/build.mjs
+
+src/index.ts:71:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+71       new ContractSpec([ "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAQAAAAEAAAAAAAAAB0NvdW50ZXIAAAAAAQAAABM=",
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+72         "AAAAAAAAAENJbmNyZW1lbnQgaW5jcmVtZW50cyBhIGNvdW50ZXIgZm9yIHRoZSB1c2VyLCBhbmQgcmV0dXJucyB0aGUgdmFsdWUuAAAAAAlpbmNyZW1lbnQAAAAAAAACAAAAAAAAAAR1c2VyAAAAEwAAAAAAAAAFdmFsdWUAAAAAAAAEAAAAAQAAAAQ=" ]),
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+src/index.ts:71:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+71       new ContractSpec([ "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAQAAAAEAAAAAAAAAB0NvdW50ZXIAAAAAAQAAABM=",
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+72         "AAAAAAAAAENJbmNyZW1lbnQgaW5jcmVtZW50cyBhIGNvdW50ZXIgZm9yIHRoZSB1c2VyLCBhbmQgcmV0dXJucyB0aGUgdmFsdWUuAAAAAAlpbmNyZW1lbnQAAAAAAAACAAAAAAAAAAR1c2VyAAAAEwAAAAAAAAAFdmFsdWUAAAAAAAAEAAAAAQAAAAQ=" ]),
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+src/index.ts:71:7 - error TS2345: Argument of type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' is not assignable to parameter of type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+  Property 'errorCases' is missing in type 'import("/home/alec/people/dudalik/soroban/packages/soroban_auth_contract/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec' but required in type 'import("/home/alec/people/dudalik/soroban/node_modules/@stellar/stellar-sdk/lib/contract_spec").ContractSpec'.
+
+71       new ContractSpec([ "AAAAAgAAAAAAAAAAAAAAB0RhdGFLZXkAAAAAAQAAAAEAAAAAAAAAB0NvdW50ZXIAAAAAAQAAABM=",
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+72         "AAAAAAAAAENJbmNyZW1lbnQgaW5jcmVtZW50cyBhIGNvdW50ZXIgZm9yIHRoZSB1c2VyLCBhbmQgcmV0dXJucyB0aGUgdmFsdWUuAAAAAAlpbmNyZW1lbnQAAAAAAAACAAAAAAAAAAR1c2VyAAAAEwAAAAAAAAAFdmFsdWUAAAAAAAAEAAAAAQAAAAQ=" ]),
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  ../../node_modules/@stellar/stellar-sdk/lib/contract_spec.d.ts:146:5
+    146     errorCases(): xdr.ScSpecUdtErrorEnumCaseV0[];
+            ~~~~~~~~~~
+    'errorCases' is declared here.
+
+
+Found 3 errors.
+
+file:///home/alec/people/dudalik/soroban/packages/soroban_auth_contract/scripts/build.mjs:18
+      throw err
+      ^
+
+[Error: ENOENT: no such file or directory, scandir './dist'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: './dist'
+}
+
+Node.js v20.12.2
+npm ERR! Lifecycle script `build` failed with error: 
+npm ERR! Error: command failed 
+npm ERR!   in workspace: soroban_auth_contract@0.0.0 
+npm ERR!   at location: /home/alec/people/dudalik/soroban/packages/soroban_auth_contract 
+soroban contract bindings typescript --contract-id $(cat /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_deployer_contract.txt) --output-dir /home/alec/people/dudalik/soroban/packages/soroban_deployer_contract --overwrite
+npm WARN workspaces soroban_deployer_contract in filter set, but no workspace folder present
+
+added 1 package, and audited 537 packages in 3s
+
+185 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> soroban_deployer_contract@0.0.0 build
+> node ./scripts/build.mjs
+
+soroban contract bindings typescript --contract-id $(cat /home/alec/people/dudalik/soroban/.soroban/contract-ids/soroban_simple_account_contract.txt) --output-dir /home/alec/people/dudalik/soroban/packages/soroban_simple_account_contract --overwrite
+npm WARN workspaces soroban_simple_account_contract in filter set, but no workspace folder present
+
+added 1 package, and audited 539 packages in 3s
+
+185 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> soroban_simple_account_contract@0.0.0 build
+> node ./scripts/build.mjs
+
+src/index.ts:69:133 - error TS2304: Cannot find name 'Context'.
+
+69   __check_auth: ({signature_payload, signature, _auth_context}: {signature_payload: Buffer, signature: Buffer, _auth_context: Array<Context>}, options?: {
+                                                                                                                                       ~~~~~~~
+
+src/index.ts:69:133 - error TS2304: Cannot find name 'Context'.
+
+69   __check_auth: ({signature_payload, signature, _auth_context}: {signature_payload: Buffer, signature: Buffer, _auth_context: Array<Context>}, options?: {
+                                                                                                                                       ~~~~~~~
+
+src/index.ts:69:133 - error TS2304: Cannot find name 'Context'.
+
+69   __check_auth: ({signature_payload, signature, _auth_context}: {signature_payload: Buffer, signature: Buffer, _auth_context: Array<Context>}, options?: {
+                                                                                                                                       ~~~~~~~
+
+
+Found 3 errors.
+
+file:///home/alec/people/dudalik/soroban/packages/soroban_simple_account_contract/scripts/build.mjs:18
+      throw err
+      ^
+
+[Error: ENOENT: no such file or directory, scandir './dist'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: './dist'
+}
+
+Node.js v20.12.2
+npm ERR! Lifecycle script `build` failed with error: 
+npm ERR! Error: command failed 
+npm ERR!   in workspace: soroban_simple_account_contract@0.0.0 
+npm ERR!   at location: /home/alec/people/dudalik/soroban/packages/soroban_simple_account_contract 
+Created import for hello_world
+Created import for soroban_account_contract
+Created import for soroban_auth_contract
+Created import for soroban_deployer_contract
+Created import for soroban_simple_account_contract
+alec@miasrv ~/people/dudalik/soroban (main) $ 
+
